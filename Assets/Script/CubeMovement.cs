@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ public class CubeMovement : MonoBehaviour
 {
     public int speed = 300;
     private bool _isMoving = false;
-    
+
     void Update()
     {
         if (_isMoving)
@@ -34,7 +35,7 @@ public class CubeMovement : MonoBehaviour
         _isMoving = true;
 
         float remainingAngle = 90;
-        Vector3 rotationCenter = transform.position + direction + Vector3.down ;
+        Vector3 rotationCenter = transform.position + direction / 2 + Vector3.down / 2 ;
         Vector3 rotationAxis = Vector3.Cross(Vector3.up, direction);
 
         while (remainingAngle > 0)
@@ -44,10 +45,7 @@ public class CubeMovement : MonoBehaviour
             remainingAngle -= rotationAngle;
             yield return null;
         }
-
+        
         _isMoving = false;
-        {
-            
-        }
     }
 }
