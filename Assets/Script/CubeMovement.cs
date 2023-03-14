@@ -8,6 +8,8 @@ public class CubeMovement : MonoBehaviour
     public int speed = 300;
     private bool _isMoving = false;
 
+    public bool[] border;
+
     void Update()
     {
         if (_isMoving)
@@ -15,18 +17,22 @@ public class CubeMovement : MonoBehaviour
             return;
         }
 
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow) && border[0])
         {
             StartCoroutine(Roll(Vector3.right));
-        } else if (Input.GetKey(KeyCode.LeftArrow))
+            border[2] = true;
+        } else if (Input.GetKey(KeyCode.LeftArrow) && border[2])
         {
             StartCoroutine(Roll(Vector3.left));
-        } else if (Input.GetKey(KeyCode.UpArrow))
+            border[0] = true;
+        } else if (Input.GetKey(KeyCode.UpArrow) && border [3])
         {
             StartCoroutine(Roll(Vector3.forward));
-        } else if (Input.GetKey(KeyCode.DownArrow))
+            border[1] = true;
+        } else if (Input.GetKey(KeyCode.DownArrow) && border[1])
         {
             StartCoroutine(Roll(Vector3.back));
+            border[3] = true;
         }
     }
 
@@ -47,5 +53,25 @@ public class CubeMovement : MonoBehaviour
         }
         
         _isMoving = false;
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.tag == "Bottom")
+        {
+            border[1] = false;
+        }
+        if (collision.tag == "Left")
+        {
+            border[2] = false;
+        }
+        if (collision.tag == "Right")
+        {
+            border[0] = false;
+        }
+        if (collision.tag == "Top")
+        {
+            border[3] = false;
+        }
     }
 }

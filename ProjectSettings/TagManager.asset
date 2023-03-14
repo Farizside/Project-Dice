@@ -10,6 +10,11 @@ TagManager:
   - 4
   - 5
   - 6
+  - Bottom
+  - Top
+  - Right
+  - Left
+  - Ground
   layers:
   - Default
   - TransparentFX
