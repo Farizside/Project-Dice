@@ -6,13 +6,14 @@ using UnityEngine;
 public class CubeMovement : MonoBehaviour
 {
     public int speed = 300;
-    private bool _isMoving = false;
+    private static GameManager Gm => FindObjectOfType<GameManager>();
+    public bool _isMoving = false;
 
     public bool[] border;
 
     void Update()
     {
-        if (_isMoving)
+        if (_isMoving || !Gm.isPlaying)
         {
             return;
         }

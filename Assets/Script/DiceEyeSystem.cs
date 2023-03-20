@@ -15,6 +15,10 @@ public class DiceEyeSystem : MonoBehaviour
             Gm.score++;
             Debug.Log(Gm.score);
             _isPressed = true;
+            if (Gm.score == Gm.N)
+            {
+                Gm.GameOver();
+            }
         }
     }
 }
