@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 3761684664786295571, guid: 42ab63ab53542c442b5a452d1bfebecc,
         type: 3}
       propertyPath: m_Name
-      value: Ground
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3761684664786295571, guid: 42ab63ab53542c442b5a452d1bfebecc,
         type: 3}
@@ -79,3 +79,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42ab63ab53542c442b5a452d1bfebecc, type: 3}
+--- !u!1 &239828392445949569 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3761684664786295571, guid: 42ab63ab53542c442b5a452d1bfebecc,
+    type: 3}
+  m_PrefabInstance: {fileID: 3990254017611836818}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1110531704493086307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239828392445949569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8455d28924d82e042b3fe48cbab0a1b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

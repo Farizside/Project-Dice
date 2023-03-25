@@ -7,6 +7,13 @@ public class DiceEyeSystem : MonoBehaviour
 {
     private static GameManager Gm => FindObjectOfType<GameManager>();
     private bool _isPressed = false;
+    private Renderer _mr;
+    public Color color;
+
+    private void Start()
+    {
+        _mr = GetComponent<Renderer>();
+    }
 
     private void OnTriggerEnter(Collider collision)
     {
@@ -15,6 +22,7 @@ public class DiceEyeSystem : MonoBehaviour
             Gm.score++;
             Debug.Log(Gm.score);
             _isPressed = true;
+            _mr.material.color = color;
             if (Gm.score == Gm.N)
             {
                 Gm.GameOver();
